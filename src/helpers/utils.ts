@@ -4,7 +4,7 @@ export function debounce<T extends (...args: any[]) => void>(
 ): (...args: Parameters<T>) => void {
   let timeout: ReturnType<typeof setTimeout> | null
 
-  return function (...args: Parameters<T>) {
+  return function (this: any, ...args: Parameters<T>) {
     if (timeout) {
       clearTimeout(timeout)
     }
