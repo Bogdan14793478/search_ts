@@ -12,19 +12,12 @@ import {
   selectFilteredPets,
   selectLoading,
 } from '@/store/pets/selectors'
-import {
-  ChangeEventHandler,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useRouter } from 'next/navigation'
 
 import Card from './petsCard'
 import { debounce } from '@/helpers/utils'
-import { AppThunk } from '@/interface/thunk'
 
 const Home = () => {
   const [searchText, setSearchText] = useState('')
@@ -74,9 +67,6 @@ const Home = () => {
       })
     }
   }, [])
-
-  // почему ререндер после нажатия на кнопку загрузить новые???
-  console.log('inputRef.current?.value', inputRef.current?.value)
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
