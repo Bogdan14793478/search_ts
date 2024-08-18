@@ -5,7 +5,6 @@ import { Breed } from '@/interface/pets'
 export const getBreeds = async (instance: AxiosInstance) => {
   try {
     const response = await instance.get('/breeds')
-    console.log('response', response)
     return response.data
   } catch (error) {
     console.error('Error fetching dog breeds:', error)
