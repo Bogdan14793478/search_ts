@@ -102,7 +102,7 @@ export interface Breed {
   height: Height
   id: string
   life_span: string
-  name?: string
+  name: string
   origin: string
   reference_image_id: string
   temperament: string

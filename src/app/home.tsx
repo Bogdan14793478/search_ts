@@ -24,10 +24,11 @@ import { useRouter } from 'next/navigation'
 
 import Card from './petsCard'
 import { debounce } from '@/helpers/utils'
+import { AppThunk } from '@/interface/thunk'
 
 const Home = () => {
   const [searchText, setSearchText] = useState('')
-  const inputRef = useRef<HTMLInputElement | undefined | null>(null)
+  const inputRef = useRef<HTMLInputElement | null>(null)
 
   const allPets = useSelector(selectAllPets)
   const isLoad = useSelector(selectLoading)
@@ -41,8 +42,6 @@ const Home = () => {
   }, [])
 
   const loadNewPets = async () => {
-    console.log('inputRef111', inputRef.current?.value)
-
     try {
       dispatch(startLoading())
       const newPets = await getAllPets()

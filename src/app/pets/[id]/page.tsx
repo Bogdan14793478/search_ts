@@ -16,7 +16,8 @@ const PetsInfo = () => {
   const isLoad = useSelector(selectLoading)
   const lastCurrent = useSelector(selectLastCurrent)
   const params = useParams()
-  const { id } = params
+  // const { id } = params
+  const id = Array.isArray(params.id) ? params.id[0] : params.id
 
   const containsDigit = (str: string) => /\d/.test(str)
 
@@ -96,9 +97,14 @@ const PetsInfo = () => {
 
 export default PetsInfo
 
-const Label = ({ label, info }) => {
+interface Props {
+  label: string
+  info: string
+}
+
+const Label: React.FC<Props> = ({ label, info }) => {
   return (
-    <p className="text-sl text-left ">
+    <p className="text-sl text-left">
       {label}: {info}
     </p>
   )
