@@ -10,7 +10,10 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = memo(({ id, title, image, onClick }) => {
   return (
-    <div className="p-20 bg-purple-100 w-full md:w-1/2">
+    <div
+      onClick={() => onClick(id)}
+      className="p-20 bg-purple-100 w-full md:w-1/2"
+    >
       <div className="bg-white rounded-lg shadow-lg">
         <img src={image} alt="" className="rounded-t-lg"></img>
         <div className="p-6">
@@ -18,6 +21,18 @@ const Card: React.FC<CardProps> = memo(({ id, title, image, onClick }) => {
         </div>
       </div>
     </div>
+
+    // <div
+    //   className=" m-[20px] card cursor-pointer h-[200px] border rounded-lg shadow-lg overflow-hidden w-[300px] object-contain  flex  justify-between"
+    //   onClick={() => onClick(id)}
+    // >
+    //   <div className="max-w-[50%] h-full">
+    //     <img src={image} alt={title} className=" w-auto object-cover" />
+    //   </div>
+    //   <div className="p-4 max-w-[40%]">
+    //     <h2 className="text-xl text-right font-bold">{title}</h2>
+    //   </div>
+    // </div>
   )
 })
 
