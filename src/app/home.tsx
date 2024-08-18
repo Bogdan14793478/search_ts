@@ -77,11 +77,16 @@ const Home = () => {
         <>
           <button
             onClick={loadNewPets}
-            className="cursor-pointer  top-40 p-[10px] rounded-[10px] bg-green-500"
+            className="cursor-pointer mt-[40px]   p-[10px] rounded-[10px] bg-green-500"
           >
             Load new pets
           </button>
-          <input ref={inputRef} onChange={handleInputChange} type="text" />
+          <input
+            ref={inputRef}
+            onChange={handleInputChange}
+            type="text"
+            className="peer h-10 w-[300px] my-[30px] rounded-md bg-gray-50 px-4 font-thin outline-none drop-shadow-sm transition-all duration-200 ease-in-out focus:bg-white focus:ring-2 focus:ring-blue-400"
+          />
         </>
       )}
 
