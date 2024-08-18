@@ -1,9 +1,8 @@
 import { Breed } from '@/interface/pets'
 import { actions } from './reducer'
-import { AppThunk } from '@/interface/thunk'
 
 export const setPetsToStore =
-  (data: any): any =>
+  (data: Breed[]): any =>
   (dispatch: (arg0: { payload: any; type: 'pets/setAllPets' }) => void) => {
     dispatch(actions.setAllPets(data))
   }
