@@ -51,7 +51,7 @@ const Home = () => {
       setSearchText(value)
       dispatch(filteredPets(value, allPets))
     }, 300),
-    []
+    [allPets]
   )
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -67,6 +67,7 @@ const Home = () => {
       })
     }
   }, [])
+  console.log('searchablePets', searchablePets)
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
